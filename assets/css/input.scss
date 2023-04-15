@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+$btn-gradient: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+$linear-gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+$white: hsl(0, 0%, 100%);
+$very-light-grayish-blue: hsl(240, 78%, 98%);
+$light-grayish-blue: hsl(234, 14%, 74%);
+$grayish-blue: hsl(233, 13%, 49%);
+$dark-grayish-blue: hsl(232, 13%, 33%);
+$blue: hsl(237, 63%, 64%);
+
+@mixin flex ($direction, $justify, $align, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+body {
+    min-height: 100vh;
+    @include flex(column, center, center);
+
+    background: url('../images/bg-top.svg') no-repeat,$very-light-grayish-blue;
+    background-position: 12rem -3rem;
+}
+
+h1, h2, p {
+    color: $grayish-blue;
+}
+
+header {
+    margin: 2rem 0;
+    @include flex(column, center, center, 1.5rem);
+}
+.plans {
+    @include flex(row, center, center, 1rem);
+}
+span {
+    color: $light-grayish-blue;
+}
+//style input
+input[type=range] {
+    width: 3rem;
+    height: 2rem;
+    appearance: none;
+    -webkit-appearance: none;
+    
+    background: transparent;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 3rem;
+    height: 2rem;
+    cursor: pointer;
+    background: $btn-gradient;
+    border-radius: 1rem;
+    border: none;
+}
+input[type=range]::-webkit-slider-thumb {
+    border: none;
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 1rem;
+    background: $white;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: 3px;
+}
+input[type=range]::-moz-range-track {
+    width: 3rem;
+    height: 2rem;
+    cursor: pointer;
+    background: $btn-gradient;
+    border-radius: 1rem;
+    border: none;
+}
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 1rem;
+    background: $white;
+    cursor: pointer;
+    appearance: none;
+    margin-top: 3px;
+}
+
+
+//main
+main {
+    @include flex(column, center, center, 2rem);
+}
+section {
+    padding: 2rem;
+    @include flex(column, center, center, 1rem);
+
+    background-color: $white;
+    border-radius: .3rem;
+}
+hr {
+    width: 100%;
+    border: 1px solid $very-light-grayish-blue;
+}
+h2 {
+    font-size: 1.2rem;
+}
+h3 {
+    color: $dark-grayish-blue;
+    font-size: 4rem;
+}
+h3:not(.active) {
+    display: none;
+}
+button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: .3rem;
+    background: $btn-gradient;
+    color: $white;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+        background: $white;
+        border: 1px solid $blue;
+        color: $blue;
+    }
+}
+.pro {
+    background: $linear-gradient;
+    
+    * {
+        color: $white;
+    }
+    button {
+        background: $white;
+        color: $blue;
+
+        &:hover {
+            background: transparent;
+            border: 1px solid $white;
+            color: $white;
+        }
+    }
+}
+
+footer {
+    margin: 1rem;
+}
+a:hover {
+    color: $blue;
+    text-decoration: none;
+}
