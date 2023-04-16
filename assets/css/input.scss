@@ -29,7 +29,7 @@ body {
     min-height: 100vh;
     @include flex(column, center, center);
 
-    background: url('../images/bg-top.svg') no-repeat,$very-light-grayish-blue;
+    background: url('../images/bg-top.svg') no-repeat, $very-light-grayish-blue;
     background-position: 12rem -3rem;
 }
 
@@ -99,6 +99,7 @@ main {
     @include flex(column, center, center, 2rem);
 }
 section {
+    width: 20rem;
     padding: 2rem;
     @include flex(column, center, center, 1rem);
 
@@ -122,7 +123,7 @@ h3:not(.active) {
 button {
     width: 100%;
     padding: 1rem;
-    border: none;
+    border: 1px solid transparent;
     border-radius: .3rem;
     background: $btn-gradient;
     color: $white;
@@ -135,6 +136,9 @@ button {
         border: 1px solid $blue;
         color: $blue;
     }
+}
+.basic, .master {
+    box-shadow: 0 10px 15px rgba($blue, 0.1);
 }
 .pro {
     background: $linear-gradient;
@@ -160,4 +164,24 @@ footer {
 a:hover {
     color: $blue;
     text-decoration: none;
+}
+
+@media (min-width: 800px) {
+    body {
+        height: 100vh;
+        background: url('../images/bg-top.svg') no-repeat right top,
+                url('../images/bg-bottom.svg') no-repeat left bottom,
+                $very-light-grayish-blue;
+    }
+    header {
+        margin-bottom: 3rem;
+        gap: 2rem;
+    }
+    main {
+        flex-direction: row;
+        gap: 0;
+    }
+    .pro {
+        padding: 3rem 2rem;
+    }
 }

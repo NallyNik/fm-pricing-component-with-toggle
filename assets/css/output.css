@@ -100,6 +100,7 @@ main {
 }
 
 section {
+  width: 20rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -131,7 +132,7 @@ h3:not(.active) {
 button {
   width: 100%;
   padding: 1rem;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 0.3rem;
   background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
   color: hsl(0, 0%, 100%);
@@ -143,6 +144,10 @@ button:hover {
   background: hsl(0, 0%, 100%);
   border: 1px solid hsl(237, 63%, 64%);
   color: hsl(237, 63%, 64%);
+}
+
+.basic, .master {
+  box-shadow: 0 10px 15px rgba(105, 111, 221, 0.1);
 }
 
 .pro {
@@ -168,6 +173,24 @@ footer {
 a:hover {
   color: hsl(237, 63%, 64%);
   text-decoration: none;
+}
+
+@media (min-width: 800px) {
+  body {
+    height: 100vh;
+    background: url("../images/bg-top.svg") no-repeat right top, url("../images/bg-bottom.svg") no-repeat left bottom, hsl(240, 78%, 98%);
+  }
+  header {
+    margin-bottom: 3rem;
+    gap: 2rem;
+  }
+  main {
+    flex-direction: row;
+    gap: 0;
+  }
+  .pro {
+    padding: 3rem 2rem;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */
